@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         sendToEmail = (EditText) findViewById(R.id.sendToEmaileditText);
         sendToEmail.setText("nabilatajrin@gmail.com");
         subject = (EditText) findViewById(R.id.subjectEditText);
-        subject.setText("new test: call from another app");
+        subject.setText("new test: added code to final app");
         text = (EditText) findViewById(R.id.textEditText);
         text.setText("body4");
         sendEmailButton = (Button) findViewById(R.id.button);
