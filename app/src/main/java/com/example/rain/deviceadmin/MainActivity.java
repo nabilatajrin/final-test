@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
     }
 
 
-    /*=========================================== class to send email =================================================*/
+    /*=========================================== class to send email ==============================================*/
 
     class SendEmailTask extends AsyncTask<Void, Void, Void> {
 
