@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Device Admin</string>
+    <string name="app_name">Lost Phone Finder</string>
     <string name="device_admin_explanation">For experimentation purposes only</string>
     <string name="compliant">Your password is compliant!</string>
     <string name="not_compliant">Your password is not compliant! Submit to my authority!</string>
