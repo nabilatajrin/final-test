@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 
 
 
-        /*=========================================  end of send mail ===================================================*/
+        /*=========================================  end of send mail ===============================================*/
 
 
         ComponentName cn=new ComponentName(this, AdminReceiver.class);
