@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rain.deviceadmin">
+    package="com.example.rain.lostphonefinder">
 
     <uses-feature
-        android:name="android.software.device_admin"
+        android:name="android.software.lost_phone_finder"
         android:required="true"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -18,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.rain.lostphonefinder.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <receiver
-            android:name="AdminReceiver"
+            android:name="com.example.rain.lostphonefinder.AdminReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data
                 android:name="android.app.device_admin"

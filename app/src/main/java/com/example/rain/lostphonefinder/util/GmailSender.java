@@ -1,4 +1,4 @@
-package com.example.rain.deviceadmin.util;
+package com.example.rain.lostphonefinder.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
