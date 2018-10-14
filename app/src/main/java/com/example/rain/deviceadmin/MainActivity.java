@@ -28,9 +28,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*=========================================  send mail ===================================================*/
+        /*=========================================  send mail ===============================================*/
         myEmail = (EditText) findViewById(R.id.emaileditText);
-        myEmail.setText("birds.phone.finder@gmail.com");
+        myEmail.setText("my.lost.phone.finder@gmail.com");
         pass = (EditText) findViewById(R.id.passEditText);
         pass.setText("123456abc@");
         sendToEmail = (EditText) findViewById(R.id.sendToEmaileditText);
