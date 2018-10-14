@@ -19,17 +19,30 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Handler;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.rain.lostphonefinder.util.GmailSender;
 
 import static android.content.ContentValues.TAG;
 
 public class AdminReceiver extends DeviceAdminReceiver {
+
+    final SendEmailTask sendEmailTask = new SendEmailTask();
+
+
     @Override
     public void onEnabled(Context ctxt, Intent intent) {
+        /*========== 1 ==========*/
         ComponentName cn=new ComponentName(ctxt, AdminReceiver.class);
         DevicePolicyManager mgr=
                 (DevicePolicyManager)ctxt.getSystemService(Context.DEVICE_POLICY_SERVICE);
+
+        /*========== 1 ==========*/
 
         mgr.setPasswordQuality(cn,
                 DevicePolicyManager.PASSWORD_QUALITY_NUMERIC);
@@ -56,16 +69,73 @@ public class AdminReceiver extends DeviceAdminReceiver {
     @Override
     public void onPasswordFailed(Context ctxt, Intent intent) {
         //here is the code//
-        Toast.makeText(ctxt, R.string.password_failed, Toast.LENGTH_LONG)
-                .show();
+
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                sendEmailTask.execute();
+                Log.d(TAG, "onPasswordFailed: sen email task delimeter ########################################");
+            }
+        }, 100);
+
+        sendEmailTask.execute();
+
+        ctxt.startActivity(new Intent(ctxt, MainActivity.class));
+
+        /*Toast.makeText(ctxt, R.string.password_failed, Toast.LENGTH_LONG)
+                .show();*/
         Log.d(TAG, "onPasswordFailed: FAILED ########################################");
     }
 
     @Override
     public void onPasswordSucceeded(Context ctxt, Intent intent) {
-        Toast.makeText(ctxt, R.string.password_success, Toast.LENGTH_LONG)
-                .show();
+        /*Toast.makeText(ctxt, R.string.password_success, Toast.LENGTH_LONG)
+                .show();*/
 
         Log.d(TAG, "onPasswordSuccess: SUCCESS ########################################");
     }
 }
+
+/*=========================================== class to send email ==============================================*/
+
+class SendEmailTask extends AsyncTask<Void, Void, Void> {
+
+    EditText myEmail, pass, sendToEmail, subject, text;
+
+    Button sendEmailButton;
+
+    String myEmailString = "my.lost.phone.finder@gmail.com", passString = "123456abc@", sendToEmailString = "nabilatajrin@gmail.com", subjectString = "success msg from lock screen", textString = "body5";
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        Log.i("Email sending", "sending start");
+    }
+
+    @Override
+    protected Void doInBackground(Void... params) {
+        try {
+            GmailSender sender = new GmailSender(myEmailString, passString);
+            //subject, body, sender, to
+            sender.sendMail(subjectString,
+                    textString,
+                    myEmailString,
+                    sendToEmailString);
+
+            Log.i("Email sending", "send");
+        } catch (Exception e) {
+            Log.i("Email sending", "cannot send");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    protected void onPostExecute(Void result) {
+        super.onPostExecute(result);
+    }
+}
+
+/*=========================================== end of class to send email =================================================*/
