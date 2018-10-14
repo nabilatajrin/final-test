@@ -1,4 +1,4 @@
-package com.example.rain.deviceadmin;
+package com.example.rain.lostphonefinder;
 
 import android.app.Activity;
 import android.app.admin.DevicePolicyManager;
@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.rain.deviceadmin.util.GmailSender;
+import com.example.rain.lostphonefinder.util.GmailSender;
 
 public class MainActivity extends Activity {
 
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 
 
 
-        /*=========================================  end of send mail ===================================================*/
+        /*=========================================  end of send mail ===============================================*/
 
 
         ComponentName cn=new ComponentName(this, AdminReceiver.class);
@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
     }
 
 
-    /*=========================================== class to send email =================================================*/
+    /*=========================================== class to send email ==============================================*/
 
     class SendEmailTask extends AsyncTask<Void, Void, Void> {
 

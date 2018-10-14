@@ -1,4 +1,4 @@
-package com.example.rain.deviceadmin;
+package com.example.rain.lostphonefinder;
 
 import org.junit.Test;
 

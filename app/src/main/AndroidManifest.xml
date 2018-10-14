@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rain.deviceadmin">
+    package="com.example.rain.lostphonefinder">
 
     <uses-feature
-        android:name="android.software.device_admin"
-        android:required="true"/>
+        android:name="android.software.lost_phone_finder"
+        android:required="true" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 
     <application
         android:allowBackup="true"
@@ -25,21 +28,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver
-            android:name="AdminReceiver"
+            android:name=".AdminReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
 
             <meta-data
                 android:name="android.app.device_admin"
-                android:resource="@xml/device_admin"/>
+                android:resource="@xml/device_admin" />
 
             <intent-filter>
-                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
-                <action android:name="android.app.action.ACTION_PASSWORD_CHANGED"/>
-                <action android:name="android.app.action.ACTION_PASSWORD_FAILED"/>
-                <action android:name="android.app.action.ACTION_PASSWORD_SUCCEEDED"/>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                <action android:name="android.app.action.ACTION_PASSWORD_CHANGED" />
+                <action android:name="android.app.action.ACTION_PASSWORD_FAILED" />
+                <action android:name="android.app.action.ACTION_PASSWORD_SUCCEEDED" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

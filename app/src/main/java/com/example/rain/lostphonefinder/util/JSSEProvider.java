@@ -1,4 +1,4 @@
-package com.example.rain.deviceadmin.util;
+package com.example.rain.lostphonefinder.util;
 
 import java.security.AccessController;
 import java.security.Provider;
