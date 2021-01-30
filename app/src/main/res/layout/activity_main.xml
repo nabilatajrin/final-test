@@ -6,14 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
         android:text="Location updates will be received only when app is foreground" />
-
     <TextView
         android:id="@+id/location_result"
         android:layout_width="wrap_content"
@@ -21,14 +19,12 @@
         android:layout_marginTop="20dp"
         android:textColor="#333"
         android:textSize="18dp" />
-
     <TextView
         android:id="@+id/updated_on"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:textSize="11dp" />
-
     <Button
         android:id="@+id/btn_get_last_location"
         android:layout_width="wrap_content"
@@ -36,7 +32,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="@string/get_last_location" />
-
     <EditText
         android:id="@+id/emaileditText"
         android:layout_width="match_parent"
@@ -52,7 +47,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/passEditText"
         android:layout_width="match_parent"
@@ -68,8 +62,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emaileditText" />
-
-
     <EditText
         android:id="@+id/subjectEditText"
         android:layout_width="match_parent"
@@ -85,7 +77,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sendToEmaileditText" />
-
     <EditText
         android:id="@+id/sendToEmaileditText"
         android:layout_width="match_parent"
@@ -101,7 +92,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passEditText" />
-
     <EditText
         android:id="@+id/textEditText"
         android:layout_width="match_parent"
@@ -117,7 +107,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subjectEditText" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -130,5 +119,4 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textEditText" />
-
 </LinearLayout>
