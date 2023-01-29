@@ -1,7 +1,5 @@
 package com.example.rain.lostphonefinder;
-
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 /**
